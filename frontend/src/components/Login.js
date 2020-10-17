@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import { apiURL } from '../util/apiURL'
 import { useHistory } from 'react-router-dom'
+import { login } from '../util/firebaseFunctions'
 
 export default function Login() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState(null)
     const history = useHistory()
-    const API = apiURL()
 
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-
         try {
-            //Log in with firebase and then change route
+            await login(email, password)
             history.push('/')
         } catch (err) {
             setError(err.message)
