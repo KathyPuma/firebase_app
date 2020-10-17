@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-// import { NavLink } from 'react-router-dom'
-// import '../CSS/NavBar.css'
 import axios from 'axios'
 import { apiURL } from '../util/apiURL'
 import { useHistory } from 'react-router-dom'
+import { signUp } from '../util/firebaseFunctions';
 
 export default function SignUp() {
     const [email, setEmail] = useState("")
@@ -17,7 +16,8 @@ export default function SignUp() {
         e.preventDefault()
 
         try {
-            //Signup with firebase and sent results to our backend
+            let res = await signUp(email, password);
+            await axios.post(`${API}/api/users`, { id: res.user.uid, email })
             history.push('/')
         } catch (err) {
             setError(err.message)
