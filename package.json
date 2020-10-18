@@ -1,0 +1,21 @@
+{
+  "name": "firebase_app",
+  "version": "1.0.0",
+  "description": "Mock full stack focused on using firebase on the back and front end.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "cd backend && npm install && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KathyPuma/firebase_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KathyPuma/firebase_app/issues"
+  },
+  "homepage": "https://github.com/KathyPuma/firebase_app#readme"
+}
