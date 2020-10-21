@@ -8,6 +8,7 @@ export default function UsersIndex() {
     const { token } = useContext(AuthContext)
 
     useEffect(() => {
+        console.log("Happened now")
         const fetchUser = async () => {
             let res = await axios({
                 method: 'get',
@@ -17,6 +18,7 @@ export default function UsersIndex() {
                 }
             })
             setUsers(res.data.users)
+            console.log(res.data.users, "users")
         }
 
 
