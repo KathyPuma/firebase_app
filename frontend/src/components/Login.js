@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { login } from '../util/firebaseFunctions'
+import firebase from 'firebase/app'
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
+import { uiConfig } from '../util/firebaseFunctions'
+
 
 export default function Login() {
     const [email, setEmail] = useState("")
@@ -41,6 +45,10 @@ export default function Login() {
                 </input>
                 <button type='submit'>Log In</button>
 
+                <StyledFirebaseAuth
+                    uiConfig={uiConfig}
+                    firebaseAuth={firebase.auth()}
+                />
             </form>
         </>
 
